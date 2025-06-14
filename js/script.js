@@ -57,14 +57,19 @@ function scrollToSection(index) {
     setTimeout(() => { isScrolling = false; }, 700);
 }
 
+function isMobile() {
+  return window.innerWidth <= 768; // hoặc dùng navigator.userAgent để kiểm tra mobile
+}
+
 // Mouse wheel event
 window.addEventListener('wheel', function(e) {
-    if (isScrolling || isMenuOpen()) return;
-    if (e.deltaY > 0 && currentSection < sections.length - 1) {
-        scrollToSection(currentSection + 1);
-    } else if (e.deltaY < 0 && currentSection > 0) {
-        scrollToSection(currentSection - 1);
-    }
+  if (isMobile()) return; // BỎ QUA trên mobile
+  if (isScrolling) return;
+  if (e.deltaY > 0 && currentSection < sections.length - 1) {
+    scrollToSection(currentSection + 1);
+  } else if (e.deltaY < 0 && currentSection > 0) {
+    scrollToSection(currentSection - 1);
+  }
 }, { passive: false });
 
 // Dot click event
@@ -77,12 +82,13 @@ dots.forEach((dot, idx) => {
 
 // Arrow key navigation
 window.addEventListener('keydown', function(e) {
-    if (isScrolling || isMenuOpen()) return;
-    if (e.key === 'ArrowDown' && currentSection < sections.length - 1) {
-        scrollToSection(currentSection + 1);
-    } else if (e.key === 'ArrowUp' && currentSection > 0) {
-        scrollToSection(currentSection - 1);
-    }
+  if (isMobile()) return; // BỎ QUA trên mobile
+  if (isScrolling) return;
+  if (e.key === 'ArrowDown' && currentSection < sections.length - 1) {
+    scrollToSection(currentSection + 1);
+  } else if (e.key === 'ArrowUp' && currentSection > 0) {
+    scrollToSection(currentSection - 1);
+  }
 });
 
 // Cập nhật dot khi cuộn bằng touch hoặc kéo thủ công

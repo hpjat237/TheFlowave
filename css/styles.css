@@ -9,16 +9,18 @@ nav {
     box-shadow: 0 2px 16px rgba(0,0,0,0.08);
     border-radius: 0 0 18px 18px;
     transition: background 0.3s;
+    padding-right: 32px; /* hoặc giá trị bạn muốn */
 }
 nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 56px;
     margin: 0;
-    padding: 0;
+    padding: 0 32px 0 0;
     gap: 12px;
+
+
 }
 nav ul li a {
     color: #fff;
@@ -158,11 +160,11 @@ nav ul li a:focus {
 }
 
 /* Ẩn trên desktop, chỉ hiện trên mobile nếu muốn */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
     .menu-toggle {
         display: none;
     }
-}
+} */
 
 /* Responsive tower grid */
 .tower-list {
@@ -360,16 +362,53 @@ body, section, nav, .btn {
 .header-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 12px; /* khoảng cách giữa các nút */
-    position: absolute;
-    top: 0;
-    right: 24px;
-    height: 56px; /* hoặc chiều cao header */
-    z-index: 1003;
+    gap: 10px;
+    margin-right: 24px; /* Lề phải với header */
 }
 
-/* Đảm bảo header-top hoặc container-fluid có position: relative */
+.btn-contact,
+.btn-register {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1d458a;
+    color: #fff;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    height: 36px;
+    min-width: 0;
+}
+
+.btn-contact .icon,
+.btn-register .icon {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+.btn-contact .svg,
+.btn-register .svg {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-contact .title,
+.btn-register .title {
+    margin-left: 4px;
+    font-size: 1rem;
+}
+
+.btn-contact:hover,
+.btn-register:hover {
+    background: #ea936b;
+    color: #fff;
+}
+
 .header-top, .container-fluid {
     position: relative;
 }
@@ -401,7 +440,7 @@ nav.navbar {
 }
 
 body {
-    background-image: url('../media/images/BACKGROUND-2.png');
+    background-image: url('../media/images/BACKGROUND-1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -411,29 +450,38 @@ body {
 /* Fullpage section */
 #fullpage {
   position: relative;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   overflow: hidden;
 }
 .page-section {
-  width: 100vw;
-  min-height: 100vh;
+  width: auto;
+  min-width: 100vw;
   height: 100vh;
-  background: #f8fafc; /* hoặc màu bạn muốn */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  margin: 0;
+  background: #f8fafc; /* hoặc màu bạn muốn */
+  box-sizing: border-box;
+  /* Xóa mọi max-width, border-radius, box-shadow nếu có */
 }
 .section-content {
-  width: 100vw;
-  max-width: 100vw;
-  padding: 0;
-  margin: 0;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 3vw 2vw;
   background: none;
-  box-shadow: none;
   border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Dot navigation */
@@ -602,7 +650,6 @@ body.menu-open {
   box-shadow: 0 2px 8px rgba(30,44,80,0.07);
   padding: 24px 18px;
   min-width: 180px;
-  max-width: 220px;
   flex: 1 1 180px;
   display: flex;
   flex-direction: column;
@@ -680,13 +727,80 @@ body.menu-open {
   justify-content: center;
   background: #f8fafc; /* hoặc #fff, hoặc màu xám nhạt bạn muốn */
 }
+.vision-section {
+  background: url('../media/images/BACKGROUND-2.png') center center / cover no-repeat;
+}
 
-/* Nếu .section-content có background, bỏ đi */
-.section-content {
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0 24px;
-  width: 100%;
-  max-width: 900px;
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.btn-hotline {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* khoảng cách giữa icon và title */
+}
+
+.btn-hotline .icon {
+    display: flex;
+    align-items: center;
+}
+
+.btn-hotline .title {
+    display: flex;
+    align-items: left;
+}
+
+.btn-register {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* khoảng cách giữa icon và title */
+}
+
+.btn-register .icon {
+    display: flex;
+    align-items: center;
+}
+
+.btn-register .title {
+    display: flex;
+    align-items: left;
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #1d458a;
+    color: #fff;
+    border-radius: 24px;
+    padding: 8px 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.btn-contact .icon {
+    display: flex;
+    align-items: center;
+}
+.btn-contact .title {
+    margin-left: 6px;
+    font-size: 1.08rem;
+}
+.btn-contact .label {
+    background: #ea936b;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2px 10px;
+    margin-left: 10px;
+    font-size: 0.98rem;
+}
+.btn-contact:hover {
+    background: #ea936b;
+    color: #fff;
 }
