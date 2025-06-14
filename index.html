@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE FLOWAVE - Sáng tạo không giới hạn</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Thêm vào <head> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay menu / Intro background -->
+    <div class="overlay-menu intro-bg d-bg">
+        <div class="bg"></div>
+        <div class="container div_zindex">
+            <div class="row">
+                <div class="col-lg-7 order-lg-last">
+                    <div class="main-menu-container">
+                        <nav>
+                            <ul>
+                                <li><a href="#home">Trang Chủ</a></li>
+                                <li><a href="#portfolio">Portfolio</a></li>
+                                <li><a href="#contact">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="menu-logo-wrapper h-100 d-flex flex-column">
+                        <a class="menu-logo mb-5" href="#home">
+                            <!-- Logo của bạn -->
+                            <img src="media/images/LOGO-5.png" alt="THE FLOWAVE" class="img-fluid" />
+                        </a>
+                        <div class="social mt-5 mt-lg-auto mb-4 d-flex">
+                            <!-- Thêm icon mạng xã hội nếu có -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="b-static">
+        <div class="header-bottom">
+            <div class="container-fluid">
+                <nav class="navbar navbar-light justify-content-between">
+                    <div class="header-left">
+                        <button class="navbar-toggler font-2" type="button">
+                            <div class="navbar-toggler-icon"></div>
+                            <span>Menu</span>
+                        </button>
+                    </div>
+                    <a class="navbar-brand" href="#home">
+                        <img src="media/images/BACKGROUND-2.png" alt="THE FLOWAVE" class="img-fluid" />
+                    </a>
+                    <div class="header-right font-1">
+                        <a class="btn-hotline btn-icon-ani" href="tel:0123456789">
+                            <div class="icon">
+                                <img class="svg" src="media/images/Asset 13.png" />
+                            </div>
+                            <div class="title effect-text">
+                                <span class="normal">0123 456 789</span>
+                            </div>
+                        </a>
+                        <a class="btn-register btn-icon-ani" href="#contact">
+                            <div class="icon">
+                                <img class="svg" src="media/images/Asset 22.png" />
+                            </div>
+                            <div class="title effect-text">
+                                <span class="normal">Liên hệ</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Thêm vào trong <nav> -->
+                    <button class="menu-toggle" aria-label="Mở menu">&#9776;</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section: Home -->
+    <section id="home">
+        <h1>THE FLOWAVE - Sáng tạo không giới hạn</h1>
+        <p>Chúng tôi là đội media chuyên sản xuất video, hình ảnh và nội dung sáng tạo cho mọi dự án.</p>
+        <a href="#portfolio" class="btn">Xem Portfolio</a>
+    </section>
+
+    <!-- Section: Portfolio -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+            <img src="media/images/BACKGROUND-1.png" alt="Dự án quay MV">
+        </div>
+    </section>
+
+    <!-- Section: Contact -->
+    <section id="contact">
+        <h2>Liên hệ</h2>
+        <form name="contact" netlify>
+            <input type="text" name="name" required placeholder="Tên của bạn">
+            <input type="email" name="email" required placeholder="Email">
+            <button type="submit">Gửi</button>
+        </form>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
