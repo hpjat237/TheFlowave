@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
-import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/Asset 13.png";
@@ -22,7 +21,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
+              Know What <strong className="purple">The Flowave Media</strong> Do
             </h1>
             <Aboutcard />
           </Col>
@@ -41,11 +40,9 @@ function About() {
         <Techstack />
 
         <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
+          <strong className="purple">Tools</strong> We use
         </h1>
         <Toolstack />
-
-        <Github />
       </Container>
     </Container>
   );
